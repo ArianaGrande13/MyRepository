@@ -162,16 +162,11 @@ end
 ```
 该规则是用来查找所有Customer 对象的name 属性是不是以“李”字开头，如果满足这一条件那么就将该Customer 对象的name 属性打印出来。
 
-3.3.2.6 not matches
+#### not matches
 与matches 作用相反，是用来将某个Fact 的字段与一个Java 标准正则表达式进行匹配，看是不是能与正则表达式匹配。not matches 使用语法如下：
-
+```markdown
 Object(fieldname not matches “正则表达式”)
---------------------- 
-作者：双斜杠少年 
-来源：CSDN 
-原文：https://blog.csdn.net/u012373815/article/details/53872025 
-版权声明：本文为博主原创文章，转载请附上博文链接！
-
+```
 
 #### contains：对比是否包含操作，操作的被包含目标可以是一个复杂对象也可以是一个简单的值。
 
