@@ -237,12 +237,11 @@ modify(fact-expression){
 2
 3
 示例
-```
+```markdown
 when
 $customer:Customer(name=="张三",age==20);
 then
-System.out.println("modify before customer
-id:"+$customer.getId()+";age:"+$customer.getAge());
+System.out.println("modify before customer id:"+$customer.getId()+";age:"+$customer.getAge());
 modify($customer){
 setId("super man"),
 setAge(30)
