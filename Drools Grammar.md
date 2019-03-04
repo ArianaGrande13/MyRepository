@@ -168,18 +168,6 @@ end
 Object(fieldname not matches “正则表达式”)
 ```
 
-#### contains：对比是否包含操作，操作的被包含目标可以是一个复杂对象也可以是一个简单的值。
-
-#### not contains：与contains相反。
-
-#### memberOf：判断某个Fact属性值是否在某个集合中，与contains不同的是他被比较的对象是一个集合，而contains被比较的对象是单个值或者对象。
-
-#### not memberOf：正好相反。
-
-#### matches：正则表达式匹配，与java不同的是，不用考虑'/'的转义问题
-
-#### not matches:正好相反。
-
 ### 10、结果部分也有drools提供的方法：
 
 #### insert：往当前workingMemory中插入一个新的Fact对象，会触发规则的再次执行，除非使用no-loop限定；
