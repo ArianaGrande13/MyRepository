@@ -210,20 +210,18 @@ update($customer);
 System.out.println("----------"+$customer.getName());
 End
 ```
-3.4.3 retract
+### 3.4.3 retract
 retract 用来将Working Memory 当中某个Fact 对象从Working Memory 当中删除，下面就通过一个例子来说明retract 宏函数的用法。
 ```
 retract($customer);
 ```
-3.4.4 modify
+### 3.4.4 modify
 modify 是一个表达式块，它可以快速实现对Fact 对象多个属性进行修改，修改完成后会自动更新到当前的Working Memory 当中。它的基本语法格式如下：
-
+```
 modify(fact-expression){
 <修改Fact 属性的表达式>[,<修改Fact 属性的表达式>*]
 }
-1
-2
-3
+```
 示例
 ```markdown
 when
