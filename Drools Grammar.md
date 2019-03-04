@@ -177,7 +177,7 @@ end
 ```markdown
 Object(fieldname not matches “正则表达式”)
 ```
-3.4 结果部分
+### 3.4 结果部分
 结果部分又被称之为Right Hand Side，简称为RHS，在一个规则当中then 后面部分就是RHS，只有在LHS 的所有条件都满足时RHS 部分才会执行。
 
 RHS 部分是规则真正要做事情的部分，可以将因条件满足而要触发的动作写在该部分当中，在RHS 当中可以使用LHS 部分当中定义的绑定变量名、设置的全局变量、或者是直接编写Java 代码（对于要用到的Java 类，需要在规则文件当中用import 将类导入后方能使用，这点和Java 文件的编写规则相同）。
@@ -190,7 +190,7 @@ RHS 部分是规则真正要做事情的部分，可以将因条件满足而要�
 insert(new Object());
 1
 一旦调用insert 宏函数，那么Drools 会重新与所有的规则再重新匹配一次，对于没有设置no-loop 属性为true 的规则，如果条件满足，不管其之前是否执行过都会再执行一次，这个特性不仅存在于insert 宏函数上，后面介绍的update、retract 宏函数同样具有该特性，所以在某些情况下因考虑不周调用insert、update 或retract容易发生死循环，这点大家需要注意.
-
+```
 when
 eval(true);
 then
@@ -198,16 +198,10 @@ Customer cus=new Customer();
 cus.setName("张三");
 insert(cus);
 end
-1
-2
-3
-4
-5
-6
-7
-3.4.2 update
+```
+### 3.4.2 update
 update 函数意义与其名称一样，用来实现对当前Working Memory 当中的Fact 进行更新，update 宏函数的作用与StatefulSession 对象的update 方法的作用基本相同，都是用来告诉当前的Working Memory 该Fact 对象已经发生了变化。
-
+```
 when
 $customer:Customer(name=="张三",age<10);
 then
@@ -215,18 +209,12 @@ $customer.setAge($customer.getAge()+1);
 update($customer);
 System.out.println("----------"+$customer.getName());
 End
-1
-2
-3
-4
-5
-6
-7
+```
 3.4.3 retract
 retract 用来将Working Memory 当中某个Fact 对象从Working Memory 当中删除，下面就通过一个例子来说明retract 宏函数的用法。
-
+```
 retract($customer);
-1
+```
 3.4.4 modify
 modify 是一个表达式块，它可以快速实现对Fact 对象多个属性进行修改，修改完成后会自动更新到当前的Working Memory 当中。它的基本语法格式如下：
 
