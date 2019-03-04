@@ -124,7 +124,7 @@ end
 
 ### 9、Drools提供了十二中类型比较操作符：
 
-```markdown
+```
 > >= < <= == != contains / not contains / memberOf / not memberOf /matches/ not matches
 ```
 
