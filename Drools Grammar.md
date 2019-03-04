@@ -186,9 +186,10 @@ RHS 部分是规则真正要做事情的部分，可以将因条件满足而要�
 
 在 Drools 当中，在RHS 里面，提供了一些对当前Working Memory 实现快速操作的宏函数或宏对象，比如insert/insertLogical、update 和retract 就可以实现对当前Working Memory中的Fact 对象进行新增、删除或者是修改.
 
-3.4.1 insert
+### 3.4.1 insert
+```
 insert(new Object());
-1
+```
 一旦调用insert 宏函数，那么Drools 会重新与所有的规则再重新匹配一次，对于没有设置no-loop 属性为true 的规则，如果条件满足，不管其之前是否执行过都会再执行一次，这个特性不仅存在于insert 宏函数上，后面介绍的update、retract 宏函数同样具有该特性，所以在某些情况下因考虑不周调用insert、update 或retract容易发生死循环，这点大家需要注意.
 ```
 when
