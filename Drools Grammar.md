@@ -128,6 +128,55 @@ end
 > >= < <= == != contains / not contains / memberOf / not memberOf /matches/ not matches
 ```
 
+3.3.2.1 contains
+比较操作符contains 是用来检查一个Fact 对象的某个字段（该字段要是一个Collection或是一个Array 类型的对象）是否包含一个指定的对象。
+
+```markdown
+when
+$order:Order();
+$customer:Customer(age >20, orders contains $order);
+then
+System.out.println($customer.getName());
+End
+```
+
+contains 只能用于对象的某个Collection/Array 类型的字段与另外一个值进行比较，作为比较的值可以是一个静态的值，也可以是一个变量(绑定变量或者是一个global 对象)。
+
+3.3.2.2 not contains
+not contains 作用与contains 作用相反，not contains 是用来判断一个Fact 对象的某个字段（Collection/Array 类型）是不是不包含一个指定的对象，和contains 比较符相同，它也只能用在对象的field 当中。
+
+3.3.2.3 memberOf
+memberOf 是用来判断某个Fact 对象的某个字段是否在一个集合（Collection/Array）当中，用法与contains 有些类似，但也有不同，memberOf 的语法如下：Object(fieldName memberOf value[Collection/Array])可以看到memberOf 中集合类型的数据是作为被比较项的，集合类型的数据对象位于memberOf 操作符后面，同时在用memberOf 比较操作符时被比较项一定要是一个变量(绑定变量或者是一个global 对象)，而不能是一个静态值。
+
+3.3.2.4 not memberOf
+该操作符与memberOf 作用洽洽相反，是用来判断Fact 对象当中某个字段值是不是中某个集合（Collection/Array）当中，同时被比较的集合对象只能是一个变量（绑定变量或global对象）。
+
+3.3.2.5 matches
+matches 是用来对某个Fact 的字段与标准的Java 正则表达式进行相似匹配，被比较的字符串可以是一个标准的Java 正则表达式，但有一点需要注意，那就是正则表达式字符串当中不用考虑“\”的转义问题
+
+when
+$customer:Customer(name matches "李.*");
+then
+System.out.println($customer.getName());
+end
+1
+2
+3
+4
+5
+该规则是用来查找所有Customer 对象的name 属性是不是以“李”字开头，如果满足这一条件那么就将该Customer 对象的name 属性打印出来。
+
+3.3.2.6 not matches
+与matches 作用相反，是用来将某个Fact 的字段与一个Java 标准正则表达式进行匹配，看是不是能与正则表达式匹配。not matches 使用语法如下：
+
+Object(fieldname not matches “正则表达式”)
+--------------------- 
+作者：双斜杠少年 
+来源：CSDN 
+原文：https://blog.csdn.net/u012373815/article/details/53872025 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
 #### contains：对比是否包含操作，操作的被包含目标可以是一个复杂对象也可以是一个简单的值。
 
 #### not contains：与contains相反。
