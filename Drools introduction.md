@@ -368,7 +368,7 @@ function void/Object functionName(Type arg...) {
 Drools 当中的函数以function 标记开头，如果函数体没有返回值，那么function 后面就是void，如果有返回值这里的void 要换成对应的返回值对象，接下来就是函数的名称函数名称的定义可以参考Java 类当中方法的命名原则，对于一个函数可以有若干个输入参数，所以函数名后面的括号当中可以定义若干个输入参数。
 
 Drools 为我们提供了一个特殊的**import** 语句：**import function**，通过该import语句，可以实现将一个Java 类中静态方法引入到一个规则文件当中，使得该文件当中的规则可以像使用普通的Drools 函数一样来使用Java 类中某个静态方法。
-```java
+```
 import function test.RuleTools.printInfo;
 ```
 通过使用**import function**关键字，将test.RuleTools 类中静态方法printInfo 引入到当前规则文件中。
