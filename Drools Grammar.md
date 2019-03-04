@@ -242,15 +242,11 @@ when
 $customer:Customer(name=="张三",age==20);
 then
 System.out.println("modify before customer id:"+$customer.getId()+";age:"+$customer.getAge());
-modify($customer){
-setId("super man"),
-setAge(30)
+modify($customer)
+{
+ setId("super man"),
+ setAge(30)
 }
 End
 ```
 这里有一点需要注意，那就是和insert、update、retract 对Working Memory 的操作一样，一旦使用了modify 块对某个Fact 的属性进行了修改，那么会导致引擎重新检查所有规则是否匹配条件，而不管其之前是否执行过。
---------------------- 
-作者：双斜杠少年 
-来源：CSDN 
-原文：https://blog.csdn.net/u012373815/article/details/53872025 
-版权声明：本文为博主原创文章，转载请附上博文链接！
