@@ -99,7 +99,7 @@ memberOf 是用来判断某个Fact 对象的某个字段是否在一个集合（
 
 #### matches
 matches 是用来对某个Fact 的字段与标准的Java 正则表达式进行相似匹配，被比较的字符串可以是一个标准的Java 正则表达式，但有一点需要注意，那就是正则表达式字符串当中不用考虑“\”的转义问题
-```markdown
+```
 when
 $customer:Customer(name matches "李.*");
 then
