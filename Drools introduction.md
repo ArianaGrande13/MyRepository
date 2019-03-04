@@ -160,7 +160,7 @@ modify(fact-expression){
 }
 ```
 示例
-```markdown
+```
 when
 $customer:Customer(name=="张三",age==20);
 then
@@ -183,7 +183,7 @@ auto-focus、date-effective、date-expires、dialect、duration、enabled、lock
 值：数字(数字越大执行优先级越高)
 示例:
 
-```markdown
+```
 rule "rule1" 
 salience 1 
 when 
@@ -198,7 +198,7 @@ end
 值:true/false
 示例:　　　　
 
-```markdown
+```
 rule "rule1" 
 no-loop true 
 when 
@@ -216,7 +216,7 @@ End
 
 示例:　
 
-```markdown
+```
 rule "rule2"
  activation-group "test"
  salience 10 
