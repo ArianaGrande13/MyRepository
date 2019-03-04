@@ -114,12 +114,12 @@ end
 
 通过这个标签，可以控制当前的规则只会被执行一次，因为一个规则的重复执行不一定是本身触发的，也可能是其他规则触发的，所以这个是no-loop的加强版。。
 
-3.5.3 date-effective
+### 7.date-effective
 控制规则只有在到达后才会触发。只有当系统时间>=date-effective 设置的时间值时，规则才会触发执行，否则执行将不执行。在没有设置该属性的情况下，规则随时可以触发，没有这种限制。
 
 date-effective 可接受的日期格式为“dd-MMM-yyyy”，例如2009 年9 月25 日 
 如果您的操作系统为中文的，那么应该写成“25-Sep-2009”；如果是英文操作系统“25-九月-2009”
-
+```markdown
 rule "rule1"
 date-effective " 25-九月-2009"
 when
@@ -127,7 +127,7 @@ eval(true);
 then
 System.out.println("rule1 is execution!");
 End
-
+```
 ### 8、duration
 
 规则定时，duration 3000 3秒后执行规则
