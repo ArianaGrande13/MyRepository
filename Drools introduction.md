@@ -68,7 +68,7 @@ End
 对于对象内部的多个约束的连接，可以采用“&&”（and）、“||”(or)和“,”(and)来实现，“&&”（and）、“||”(or)和“,”这三个连接符号如果没有用小括号来显示的定义优先级的话，那么它们的执行顺序是：“&&”（and）、“||”(or)和“,” “&&”优先级最高，表面上看“,”与“&&”具有相同的含义，但是有一点需要注意，“，”与“&&”和“||”不能混合使用，也就是说在有“&&”或“||”出现的LHS 当中，是不可以有“，”连接符出 
 现的，反之亦然。
 
-### 3.3.2十二种类型比较操作符：
+### 3.3.2十二种比较操作符：
 
 ```markdown
 > >= < <= == != contains / not contains / memberOf / not memberOf /matches/ not matches
@@ -77,7 +77,7 @@ End
 #### contains
 比较操作符contains 是用来检查一个Fact 对象的某个字段（该字段要是一个Collection或是一个Array 类型的对象）是否包含一个指定的对象。
 
-```markdown
+```
 when
 $order:Order();
 $customer:Customer(age >20, orders contains $order);
