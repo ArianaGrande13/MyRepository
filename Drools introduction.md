@@ -55,7 +55,7 @@ end
 ```
 rule "rule1"
 when
-$customer:Customer(age>20,gender=='male’)
+$customer:Customer(age>20,gender=='male')
 Order(customer==$customer,price>1000)
 then
 <action>…
